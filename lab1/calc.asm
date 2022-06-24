@@ -31,11 +31,14 @@ NONE:
 
 ADD:
     add   a2,a0,a1          # ADD op
+    andi  a2,a2,0xFF
     jal   zero,END
 
 SUB:
     xori  a3,a1,0xFF        # SUB op
+    addi  a3,a3,1
     add   a2,a0,a3          # 8bit sub
+    andi  a2,a2,0xFF
     jal   zero,END
 
 AND:
